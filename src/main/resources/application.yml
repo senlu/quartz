@@ -1,0 +1,16 @@
+server:
+  port: 8081
+spring:
+  quartz:
+    properties:
+      org:
+        quartz:
+          threadPool: #连接池
+            class: org.quartz.simpl.SimpleThreadPool
+            #线程数
+            threadCount: 20
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+    # 定时任务延时启动时间30秒
+    startup-delay: PT30S
+    scheduler-name: StdScheduler
